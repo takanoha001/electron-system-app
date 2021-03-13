@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>System info</title>
+  <link rel="stylesheet" href="./bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>SysInfoApp</h1>
+    <h1></h1>
+    <div id="output"></div>
+  </div>
+</body>
+
+<script>
+  var osut = require('os-utils');
+
+  var osu = require('os');
+
+  
+
+  console.log(osut.platform);
+  /**
+   * console.log(osut);
+  * console.log(osu);
+  console.log(osu.cpus());
+  console.log(osu.totalmem());
+  console.log(osu.freemem());
+
+  //todo:
+  // display
+  // - CPU 
+  // - memory
+  // - installed software and etc
+**/
+  console.log(process);
+  
+
+  let output = `
+  <h2 class="page-header">Test Data</h2>
+    <ul class="list-group">
+    <li class="list-group-item">test: ${osut.platform.node}</li>
+
+
+  <h2 class="page-header">App Version Data</h2>
+    <ul class="list-group">
+    <li class="list-group-item">Node: ${process.versions.node}</li>
+    <li class="list-group-item">Chrome: ${process.versions.chrome}</li>
+    <li class="list-group-item">Electron: ${process.versions.electron}</li>
+
+  <h2 class="page-header">System Version Data</h2>
+    <ul class="list-group">
+    <li class="list-group-item">Node: ${process.versions.node}</li>
+
+  <h2 class="page-header">System Memory Version Data</h2>
+    <ul class="list-group">
+    <li class="list-group-item">Total: ${process.getSystemMemoryInfo().total}</li>
+    <li class="list-group-item">Free: ${process.getSystemMemoryInfo().free}</li>
+
+
+  <h2 class="page-header">System CPU</h2>
+    <ul class="list-group">
+    <li class="list-group-item">Total: ${osu.cpus().model}</li>
+    
+</ul>`;
+
+  document.getElementById('output').innerHTML = output;
+</script>
+
+<script>
+  require("./renderer.js")
+  </script>
+</html>

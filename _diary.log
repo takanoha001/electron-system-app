@@ -1,0 +1,18 @@
+mkdir electron-system-app && cd electron-system-app
+npm init
+update 
+- package.json start: "electron ."
+- main.js
+npm start
+
+
+https://bootswatch.com/
+add mainWindow.html  <link rel="stylesheet" href="./bootstrap.min.css">
+
+
+npm install os-utils
+npm install os
+
+
+todo:
+- display cpu usage 
